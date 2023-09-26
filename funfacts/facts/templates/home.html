@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero section -->
+<section class="hero">
+  <div class="container">
+    <h1>Discover Something New Every Day</h1>
+    <div id="particles-js"></div>
+    <a href="{% url 'random' %}" class="btn btn-primary">Explore Now</a>
+  </div>
+</section>
+<!-- Top 10 Latest Facts section -->
+<section class="latest-facts">
+  <div class="container">
+    <h2 class="text-center mb-5">Top 10 Latest Facts</h2>
+    <div class="row">
+      {% for fact, fact_image in fact_images.items %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card bg-gradient border-0 rounded-3 shadow">
+          <img src="{{ fact_image }}" class="card-img-top rounded-3" alt="{{ fact.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ fact.title }}</h5>
+            <p class="card-text">{{ fact.fact_text }}</p>
+            <a href="{% url 'fact' fact_id=fact.id %}" class="btn btn-primary btn-sm rounded-pill btn-primary">Read
+              More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Daily Fact section -->
+<section class="daily-fact">
+  <div class="container">
+    <h2>Daily Fact</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="position-relative">
+            <img src="{{ todays_image_link }}" class="card-img-top" alt="{{ todays_fact.title }}">
+            <div class="card-img-overlay d-flex flex-column justify-content-end">
+              <div>
+                <h5 class="card-title">{{ todays_fact.title }}</h5>
+                <p class="card-text">{{ todays_fact.fact_text }}</p>
+                <a href="{% url 'fact' fact_id=todays_fact.id %}" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ad">
+          <img src="https://via.placeholder.com/300x250" alt="Ad">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories section -->
+<section class="categories">
+  <div class="container">
+    <h2>Categories</h2>
+    <div class="row">
+      {% for category in categories %}
+      <div class="col-md-4">
+        <div class="card rounded-3 shadow-lg">
+          <!-- <img  src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="Science"> -->
+          <img src="{{ category.image_url }}" class="card-img-top rounded-top" alt="Science">
+          <div class="card-body">
+            <h5 class="card-title">{{ category.category_name }}</h5>
+            <a href="#" class="btn btn-primary btn-dark btn-lg fw-bold animate-up">Explore</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- <div class="col-md-4">
+        <div class="card rounded-3 shadow-lg">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="Science">
+          <div class="card-body">
+            <h5 class="card-title">Science</h5>
+            <a href="#" class="btn btn-dark btn-lg fw-bold animate-up">Explore</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card rounded-3 shadow-lg">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="Science">
+          <div class="card-body">
+            <h5 class="card-title">Science</h5>
+            <a href="#" class="btn btn-primary btn-dark btn-lg fw-bold animate-up">Explore</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card rounded-3 shadow-lg">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="Science">
+          <div class="card-body">
+            <h5 class="card-title">Science</h5>
+            <a href="#" class="btn btn-dark btn-lg fw-bold animate-up">Explore</a>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials section -->
+<section class="testimonials">
+  <div class="container">
+    <h2>Testimonials</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">"I never knew there were so many interesting facts out there until I stumbled upon this
+              website. I learn something new every day!"</p>
+            <p class="card-author">- Abel Mesfin </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">"As a teacher, I find this website to be a great resource for finding fun and
+              educational facts to share with my students."</p>
+            <p class="card-author">- Maria Macceba</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- Add any custom scripts here -->
+{% load static %}
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="{% static 'facts/main.js' %}"></script>
+{% endblock %}

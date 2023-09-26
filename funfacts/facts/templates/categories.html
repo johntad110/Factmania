@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Categories | Fun Facts
+{% endblock %}
+
+{% block content %}
+<style>
+	.container {
+		margin-top: 30px;
+	}
+
+	.card {
+		margin-bottom: 30px;
+		border-radius: 20px;
+		overflow: hidden;
+	}
+
+	.card-header {
+		font-size: 18px;
+	}
+
+	.card-text {
+		font-size: 14px;
+	}
+
+	.card-body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.card-body img {
+		max-width: 100%;
+		height: auto;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		{% for category in categories %}
+		<div class="col-md-4">
+			<div class="card" data-category="{{ category.category_name }}">
+				<div class="card-header text-white bg-dark">
+					{{ category.category_name }}
+					<a href="{% url 'edit_category' category_name=category.category_name %}">Edit</a>
+				</div>
+				<div class="card-body">
+					<p class="card-text text-muted">{{ category.description }}</p>
+					<img src="{{ category.image_url }}" alt="Category Image" class="img-fluid">
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function () {
+		// add animation on hover
+		$('.card').hover(function () {
+			$(this).addClass('animated pulse');
+		}, function () {
+			$(this).removeClass('animated pulse');
+		});
+
+		// redirect to fact page on click
+		$('.card').click(function () {
+			const category = $(this).data('category');
+			window.location.href = '/facts/?category=' + category;
+		});
+	});
+</script>
+{% endblock %}

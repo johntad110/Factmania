@@ -1,0 +1,438 @@
+/* Hero section styles */
+.hero {
+    /* background-image: url('https://via.placeholder.com/1920x800'); */
+    /* background-image: url('https://e0.pxfuel.com/wallpapers/829/735/desktop-wallpaper-nebula-stars-galaxy-colorful-1980-x-1080-nebula.jpg'); */
+    background-image: url("https://image.lexica.art/full_jpg/2543efbf-1083-437d-be25-d7cddfba761c");
+    transform: rotate(90deg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+
+    /* add some animation */
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+#particles-js {
+    position: absolute;
+    transform: translateY(-60%);
+    width: 100%;
+    height: 100%;
+  }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.hero a.btn-primary {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #f44336;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.hero a.btn-primary:hover {
+    background-color: #fff;
+    color: #f44336;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero a.btn-primary:active {
+    color: white!important;
+    background-color: black!important;
+    border-color: black!important;
+}
+
+.hero a.btn-primary:focus {
+    box-shadow: none!important;
+}
+
+
+/* Top 10 Latest Facts section styles */
+.latest-facts {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.latest-facts h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+}
+
+.latest-facts .card {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.latest-facts .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.latest-facts .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.latest-facts .card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.latest-facts .card-body {
+    padding: 20px;
+}
+
+.latest-facts .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.latest-facts .card-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.latest-facts .btn-primary {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+    transition: 0.3s ease;
+}
+
+.latest-facts .btn-primary:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.latest-facts .btn-primary:focus {
+    box-shadow: none;
+}
+
+.latest-facts .btn-primary.rounded-pill {
+    border-radius: 50px;
+    padding: 8px 20px;
+}
+
+@media (max-width: 767px) {
+    .latest-facts .card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .latest-facts .card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .latest-facts .card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .latest-facts .card {
+        margin-bottom: 30px;
+    }
+}
+
+/* Daily Fact section styles */
+.daily-fact {
+    padding: 100px 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.daily-fact h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.daily-fact .card {
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.daily-fact .card-img-top {
+    height: 400px;
+    object-fit: cover;
+}
+
+.daily-fact .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.daily-fact .card-text {
+    padding: auto;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+}
+
+.daily-fact .btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.daily-fact .btn-primary:hover {
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    animation: blur 0.3s ease-in-out forwards;
+}
+
+@keyframes blur {
+    from {
+        backdrop-filter: blur(5px);
+    }
+
+    to {
+        backdrop-filter: blur(10px);
+    }
+}
+
+.daily-fact .ad img {
+    max-width: 100%;
+}
+
+.daily-fact .card-img-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+@media screen and (max-width: 992px) {
+    .daily-fact {
+        padding: 80px 0;
+    }
+
+    .daily-fact .card-img-top {
+        height: 300px;
+        background-color: wheat;
+    }
+
+    .daily-fact .card-title {
+        font-size: 1.2rem;
+    }
+
+    .daily-fact .card-text {
+        font-size: 1rem;
+    }
+}
+
+/* Categories section styles */
+.categories {
+    padding: 100px 0;
+}
+
+.categories h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.categories .card {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1s ease-in-out 0.5s forwards;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.categories .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.categories .btn-primary {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    animation: zoomIn;
+}
+
+.categories .btn-primary:hover {
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.categories .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Testimonials section styles */
+.testimonials {
+    background-color: #f7f7f7;
+    padding: 100px 0;
+}
+
+.testimonials h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.testimonials .card {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1s ease-in-out 0.5s forwards;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.testimonials .card-text {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.testimonials .card-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .latest-facts .card {
+        margin-bottom: 15px;
+    }
+
+    .daily-fact .card {
+        margin-bottom: 15px;
+    }
+
+    hero h1 {
+        font-size: 3rem;
+    }
+
+    .latest-facts .card {
+        margin-bottom: 15px;
+    }
+
+    .daily-fact .card {
+        margin-bottom: 15px;
+    }
+
+    .categories .card {
+        margin-bottom: 15px;
+    }
+
+    .categories .card {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .latest-facts .card {
+        margin-bottom: 15px;
+    }
+
+    .daily-fact .card {
+        margin-bottom: 15px;
+    }
+
+    .categories .card {
+        margin-bottom: 15px;
+    }
+}

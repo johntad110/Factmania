@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h1>Add Fun Fact</h1>
+        <form class="add_fact" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="text">Fact Text:</label>
+            <textarea class="form-control" id="text" name="text" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <select class="form-control" id="category" name="category" required>
+              {% for category in categories %}
+                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Fact</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include jQuery and Bootstrap scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript code here -->
+  <script>
+    $(document).ready(function() {
+      // Add animation to the form on page load
+      $('.col-md-6').addClass('animate__animated animate__fadeInUp');
+      
+      // Add animation to the form on submit
+      $('form').submit(function() {
+        $(this).addClass('animate__animated animate__fadeOutDown');
+      });
+    });
+  </script>
+
+  <!-- Custom CSS styles -->
+  <style>
+    /* Add custom CSS styles for the form */
+    form .add_fact{
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    /* Add custom CSS styles for the form elements */
+    label {
+      font-weight: bold;
+    }
+    
+    textarea {
+      resize: none;
+    }
+    
+    /* Add custom CSS styles for the submit button */
+    button[type="submit"] {
+      margin-top: 20px;
+    }
+    
+    /* Add custom CSS styles for the form animations */
+    .animate__animated {
+      animation-duration: 1s;
+    }
+    
+    .animate__fadeInUp {
+      animation-name: fadeInUp;
+    }
+    
+    .animate__fadeOutDown {
+      animation-name: fadeOutDown;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        transform: translate3d(0, 100%, 0);
+        opacity: 0;
+      }
+      
+     to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes fadeOutDown {
+      from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      
+      to {
+        transform: translate3d(0, 100%, 0);
+        opacity: 0;
+      }
+    }
+  </style>
+{% endblock %}

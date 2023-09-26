@@ -1,0 +1,132 @@
+/* About section styles */
+
+.about-section {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about-header p {
+    font-size: 24px;
+    line-height: 1.8;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.about-content h2, .about-team h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about-content p, .about-team p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.about-content h2::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.about-content p::before {
+    content: "";
+    display: block;
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.about-team {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    text-align: center;
+    margin: 30px;
+    flex-basis: 300px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.team-member p {
+    font-size: 20px;
+    color: #ccc;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-header h1 {
+        font-size: 36px;
+    }
+
+    .about-header p {
+        font-size: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .about-team {
+        margin-top: 40px;
+    }
+
+    .team-member {
+        flex-basis: 100%;
+        margin: 20px 0;
+    }
+
+    .team-member img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

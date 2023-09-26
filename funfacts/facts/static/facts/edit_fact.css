@@ -1,0 +1,102 @@
+.edit-fact-wrapper {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-fact-wrapper h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-part form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-fields {
+    margin: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #333;
+}
+
+.form-field input[type="text"],
+.form-field textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-image {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.form-image-image {
+    margin-bottom: 10px;
+    width: 300px;
+    background-color: #999;
+    border-radius: 10px;
+}
+
+.form-image-image:hover {
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 770px) {
+    .form-part form {
+        flex-direction: column;
+    }
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 10px;
+
+
+}
+
+.form-buttons button {
+    min-width: 200px !important;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.form-buttons button:hover {
+    background-color: white;
+    color: black;
+}
+
+.form-buttons a {
+    min-width: 75px !important;
+    background-color: #999999;
+    border: 1px solid #999;
+    border-radius: 10px;
+    color: white !important;
+}

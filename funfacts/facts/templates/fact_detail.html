@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ fact.fact_title }}</h1>
+      <img src="{{ image_url }}" alt="{{ fact.fact_text }}" class="img-fluid rounded mb-3">
+      <div class="fact-description">
+        <p class="fact-short-description">&#9658; {{ fact.fact_text }}</p>
+        <p class="fact-long-description pt-2 pb-2 fst-italic ">{{ fact.fact_discription }}</p>
+        <p class="fact-source">Source: {{ fact.source }}</p>
+        <p class="fact-date-added">Date Added: {{ fact.date_added }}</p>
+      </div>
+      <div class="fact-related card">
+        <div class="card-body">
+          <h2 class="card-title">Related Facts</h2>
+          <ul class="list-unstyled">
+            {% for related_fact in related_facts %}
+            <li><a href="{% url 'fact' fact_id=related_fact.id %}">{{ related_fact.fact_title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="fact-ad">
+        <img src="https://via.placeholder.com/300x250" alt="Advertisement" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'facts/fact_detail.js' %}"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'facts/fact_detail.css' %}">
+
+{% endblock %}

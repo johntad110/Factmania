@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Factmania{% endblock %}</title>
+        <!-- Add custom CSS stylesheets here -->
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Navigation menu -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">FACTMANIA</a>
+            <button class="navbar-toggler search-btn-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
+                    <div class="input-group">
+                      <input class="form-control search-box" type="search" name="q" placeholder="Search" aria-label="Search">
+                      <div class="input-group-append">
+                        <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Archive</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="{% url 'login' %}" class="login-btn btn btn-primary btn-sm rounded-pill mx-1">Login</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="{% url 'signup' %}" class="btn btn-primary btn-sm rounded-pill">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Content section -->
+        <div class="container mt-5">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- Footer section -->
+        <footer class="mt-4">
+            <div class="container">
+                <hr>
+                <p>&copy; {% now "Y" %} Factmania. All rights reserved.</p>
+            </div>
+        </footer>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'facts/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'facts/base.css' %}">
+        <!-- Add any custom JavaScript scripts here -->
+        {% block scripts %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK6JLcrQbhTmKptSZipgMlDiFEHiJGg6jfkBIp8..."></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/esm/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="{% static 'facts/main.js' %}"></script>
+        {% endblock %}
+    </body>
+</html>

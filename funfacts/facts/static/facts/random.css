@@ -1,0 +1,135 @@
+/* Login wrapper styles */
+.login-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login title styles */
+.login-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Form styles */
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #f2f2f2;
+  color: #000;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  outline: none;
+  background: #ddd;
+}
+
+/* Button styles */
+.login-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #555;
+}
+
+.signup-btn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.signup-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Link styles */
+.forgot-password-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+}
+
+.forgot-password-link:hover {
+  color: #555;
+}
+
+.login-message {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+}
+
+.login-message a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition:color 0.3s ease-in-out;
+}
+
+.login-message a:hover {
+  color: #555;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .login-wrapper {
+    padding: 20px;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    margin-bottom: 10px;
+  }
+  
+  .login-form button[type="submit"] {
+    font-size: 14px;
+  }
+  
+  .login-title {
+    font-size: 20px;
+  }
+  
+  .login-form label {
+    font-size: 16px;
+  }
+  
+  .forgot-password-link,
+  .login-message {
+    font-size: 14px;
+  }
+}

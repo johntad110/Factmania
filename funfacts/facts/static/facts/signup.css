@@ -1,0 +1,103 @@
+/* Login wrapper styles */
+.login-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login title styles */
+.login-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
+
+/* Button styles */
+.login-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-form button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.signup-btn {
+    background: transparent;
+    color: #333;
+    border: 2px solid #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Link styles */
+.forgot-password-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+    text-decoration: none;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles */
+.error-message {
+    display: block;
+    margin-top: 10px;
+    color: #ff6347;
+    font-size: 14px;
+    font-weight: bold;
+}

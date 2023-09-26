@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="login-wrapper">
+      <h2 class="login-title">Create an Account</h2>
+      <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary signup-btn">Sign Up</button>
+      </form>
+      <p class="login-message">Already have an account? <a href="{% url 'login' %}">Log in here</a>.</p>
+    </div>
+  </div>
+
+  {% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'facts/signup.css' %}">
+  {% endblock styles %}
+{% endblock %}

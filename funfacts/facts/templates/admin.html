@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Admin Dashboard</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Fact</th>
+        <th>Created</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fact, images in facts_and_images.items %}
+      <tr>
+        <td>{{ fact.id }}</td>
+        <td><img src={{ images }} width='150px'></td>
+        <td>{{ fact.fact_text }}</td>
+        <td>{{ fact.date_added }}</td>
+        <td>
+          {% comment %} <a href="{% url 'edit_fact' fact.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'delete_fact' fact.id %}" class="btn btn-danger">Delete</a> {% endcomment %}
+          <a href="{% url 'edit_fact' fact.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'add_fact' %}" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="4">No facts found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'facts/admin.css' %}">
+{% endblock styles %}
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // write additional JavaScript code here
+</script>
+{% endblock %}

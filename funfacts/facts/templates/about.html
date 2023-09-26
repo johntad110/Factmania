@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="about-section">
+  <div class="container">
+    <div class="about-header">
+      <h1>About Us</h1>
+      <p>We are a team of curious individuals who love to discover and share fascinating facts from around the world.</p>
+    </div>
+    <div class="about-content row">
+      <div class="col-md-6">
+        <h2>Our Mission</h2>
+        <p>Our mission is to inspire people's curiosity and love for learning by providing them with daily doses of interesting and fun facts that they can share with their friends and family.</p>
+      </div>
+      <div class="col-md-6">
+        <h2>Our Vision</h2>
+        <p>We envision a world where knowledge is celebrated and shared freely, where people are inspired to learn new things every day, and where curiosity is valued as one of the most important traits for personal growth and development.</p>
+      </div>
+    </div>
+    <div class="about-team">
+      <h2>Meet the Team</h2>
+      <p>We are a diverse group of individuals with different backgrounds, interests, and talents who share a common passion for knowledge and fun. Here are some of the people whomake this website possible:</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="team-member">
+            {% load static %}
+            <img src="{% static 'facts/ceo_and_founder.jpg' %}" alt="John">
+            <h3>John Doe</h3>
+            <p>Founder & CEO</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member">
+            {% load static %}
+            <img src="{% static 'facts/editor_in_chief.jpg' %}" alt="Jane Smith">
+            <h3>Mar_ya Smith</h3>
+            <p>Editor-in-Chief</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member">
+            {% load static %}
+            <img src="{% static 'facts/web_developer.jpg' %}" alt="Mike Johnson">
+            <h3>Mike Johnson</h3>
+            <p>Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'facts/about.css' %}">
+{% endblock %}
+
+{% endblock %}
+

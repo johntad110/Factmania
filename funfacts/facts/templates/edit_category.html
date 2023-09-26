@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="edit-category-wrapper">
+    <h1>Edit Category</h1>
+    <div class="form-part">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-fields">
+                <div class="form-field">
+                    <label for="{{ form.category_name.id_for_label }}">Category Name</label>
+                    {{ form.category_name }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ form.description.id_for_label }}">Description</label>
+                    {{ form.description }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ form.image_url.id_for_label }}">Image URL</label>
+                    {{ form.image_url }}
+                </div>
+            </div>
+            <div class="form-image">
+                <img src="{{ form.image_url.value }}" class="form-image-image" alt="category_image" />
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" onclick="goback()">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function goback() {
+        window.history.back();
+    }
+</script>
+
+{% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'facts/edit_category.css' %}">
+{% endblock styles %}
+{% endblock content %}

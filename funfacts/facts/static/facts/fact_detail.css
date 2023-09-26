@@ -1,0 +1,71 @@
+.fact-description {
+  margin-top: 1rem;
+}
+
+.fact-description p {
+  margin: 0;
+}
+
+.fact-short-description {
+  font-size: 1.2rem;
+}
+
+.fact-long-description {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.fact-source {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.fact-date-added {
+  color: gray;
+  font-size: 16px;
+}
+
+.fact-description {
+  margin-bottom: 20px;
+}
+
+.fact-short-description {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.fact-long-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.fact-source {
+  font-size: 14px;
+  color: gray;
+}
+
+.fact-related {
+  margin-top: 30px;
+}
+
+.fact-related h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.fact-related ul li {
+  font-size: 18px;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.fact-ad {
+  margin-top: 30px;
+}
+
+.fact-ad img {
+  width: 100%;
+}
