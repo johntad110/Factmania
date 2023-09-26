@@ -52,14 +52,14 @@ To install and run FactMania, follow these steps:
 
 3. Create and activate a virtual environment:
 
-   ````shell
+   ```shell
    python3 -m venv venv
    source venv/bin/activate
    ```
 
 4. Install the dependencies:
 
-   ````shell
+   ```shell
    pip install -r requirements.txt
    ```
 
